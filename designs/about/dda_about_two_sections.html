@@ -1,0 +1,125 @@
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FAF8F4;
+  --sand:#EDE8DF;
+  --teal:#2D5A5A;
+  --teal-light:#3D7A7A;
+  --gold:#C4A882;
+  --off-black:#1A1814;
+  --mid:#7B6E5F;
+  --muted:#A89E92;
+  --white:#FFFFFF;
+}
+body{font-family:'Jost',sans-serif;font-weight:300;background:var(--cream);color:var(--off-black);line-height:1.7}
+
+.section-1{background:var(--white);padding:80px 8%}
+.s1-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1100px;margin:0 auto}
+
+.s1-left{}
+.eyebrow{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:400}
+.s1-left h2{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:400;line-height:1.2;color:var(--off-black);margin-bottom:24px}
+.s1-left h2 em{color:var(--teal);font-style:italic}
+.rule{width:40px;height:1px;background:var(--gold);margin-bottom:28px}
+.s1-left p{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:16px}
+.s1-left p:last-child{margin-bottom:0}
+
+.s1-right{position:relative}
+.visual-block{background:var(--sand);height:440px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.visual-block::before{content:'';position:absolute;top:20px;left:20px;right:20px;bottom:20px;border:1px solid rgba(196,168,130,0.3)}
+.visual-inner{text-align:center;padding:40px;position:relative;z-index:1}
+.visual-icon{width:48px;height:48px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center}
+.diamond-lg{width:28px;height:28px;background:var(--teal);transform:rotate(45deg);opacity:0.6}
+.visual-stat{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:var(--teal);line-height:1;margin-bottom:6px}
+.visual-stat-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:30px}
+.visual-divider{width:1px;height:32px;background:var(--gold);margin:0 auto 30px;opacity:0.5}
+.visual-stat2{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--teal);line-height:1;margin-bottom:6px}
+.pill{display:inline-block;background:rgba(45,90,90,0.08);color:var(--teal);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;margin-top:20px}
+
+.section-divider{height:1px;background:var(--sand);margin:0 8%;max-width:calc(100% - 16%)}
+
+.section-2{background:var(--cream);padding:80px 8%}
+.s2-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:80px;align-items:start}
+
+.s2-left{}
+.s2-left h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:400;line-height:1.1;color:var(--off-black);margin-bottom:20px}
+.s2-left h2 em{color:var(--teal);font-style:italic;display:block}
+.s2-left .rule{margin-bottom:24px}
+.s2-left .tagline{font-size:13px;color:var(--muted);line-height:1.7;max-width:260px}
+
+.s2-right{}
+.s2-right p{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:20px}
+.s2-right p:last-child{margin-bottom:0}
+.treatment-tags{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0}
+.tag{border:0.5px solid rgba(45,90,90,0.3);color:var(--teal);font-size:11px;letter-spacing:0.1em;padding:6px 14px;background:rgba(45,90,90,0.04)}
+.trust-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--sand);margin-top:36px}
+.trust-item{background:var(--white);padding:24px 20px;text-align:center}
+.trust-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--teal);line-height:1;margin-bottom:4px}
+.trust-label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+
+<div class="section-1">
+  <div class="s1-inner">
+    <div class="s1-left">
+      <p class="eyebrow">About Diamond District Aesthetics NYC</p>
+      <h2>Enhancing Beauty &amp; Confidence with <em>Aesthetic Excellence</em> in Midtown Manhattan</h2>
+      <div class="rule"></div>
+      <p>Located in the heart of New York City's Diamond District, Diamond District Aesthetics NYC is a trusted aesthetic clinic in Midtown Manhattan specializing in advanced, non-surgical treatments designed to enhance natural beauty with minimal downtime.</p>
+      <p>We combine medical expertise, artistic precision, and modern aesthetic technology to deliver personalized treatments that help patients look refreshed, confident, and naturally beautiful.</p>
+      <p>Whether you are exploring facial rejuvenation, skin tightening, collagen-stimulating treatments, or injectables — our goal is always the same: subtle, balanced results tailored to your unique features and lifestyle.</p>
+    </div>
+    <div class="s1-right">
+      <div class="visual-block">
+        <div class="visual-inner">
+          <div class="visual-icon"><div class="diamond-lg"></div></div>
+          <div class="visual-stat">NYC</div>
+          <div class="visual-stat-label">Diamond District · Midtown Manhattan</div>
+          <div class="visual-divider"></div>
+          <div class="visual-stat2">Non-Surgical</div>
+          <div class="visual-stat-label">Advanced aesthetic treatments</div>
+          <div class="pill">Patient-First Care</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-2">
+  <div class="s2-inner">
+    <div class="s2-left">
+      <p class="eyebrow">Who We Are</p>
+      <h2>More Than <em>Appearance</em></h2>
+      <div class="rule"></div>
+      <p class="tagline">Confidence, self-expression, and feeling comfortable in your own skin — that's what drives everything we do.</p>
+    </div>
+    <div class="s2-right">
+      <p>At Diamond District Aesthetics NYC, we believe aesthetics is about more than appearance. It's about confidence, self-expression, and feeling comfortable in your own skin.</p>
+      <p>Our Midtown Manhattan aesthetic clinic focuses on patient-first care, offering customized treatment plans that support long-term skin health, facial harmony, and natural-looking enhancement.</p>
+      <div class="treatment-tags">
+        <span class="tag">Botox®</span>
+        <span class="tag">Dermal Fillers</span>
+        <span class="tag">Emface®</span>
+        <span class="tag">Morpheus8</span>
+        <span class="tag">PRP Therapy</span>
+        <span class="tag">Sculptra</span>
+      </div>
+      <p>Every treatment is carefully selected to align with your goals while preserving what makes you uniquely you. Patients throughout Midtown Manhattan, the Diamond District, and New York City trust our team for honest guidance, refined aesthetic care, and results that never feel overdone.</p>
+      <div class="trust-bar">
+        <div class="trust-item">
+          <div class="trust-num">NYC</div>
+          <div class="trust-label">Diamond District</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">100%</div>
+          <div class="trust-label">Non-Surgical</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">5★</div>
+          <div class="trust-label">Patient Trust</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

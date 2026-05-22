@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FAF8F4;
+  --sand:#EDE8DF;
+  --warm-brown:#C4A882;
+  --deep-teal:#2D5A5A;
+  --off-black:#1A1814;
+  --mid:#7B6E5F;
+  --white:#FFFFFF;
+}
+body{background:var(--cream);color:var(--off-black);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7}
+
+nav{background:var(--white);border-bottom:0.5px solid #E0D9D0;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;letter-spacing:0.08em;color:var(--deep-teal)}
+.nav-logo span{display:block;font-size:10px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-top:2px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--mid);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;font-weight:400}
+.nav-links a.active{color:var(--deep-teal);border-bottom:1px solid var(--deep-teal);padding-bottom:2px}
+.nav-cta{background:var(--deep-teal);color:var(--white);padding:10px 24px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;font-weight:400;border:none;cursor:pointer}
+
+.hero{height:480px;background:linear-gradient(135deg,#2D5A5A 0%,#3D7A7A 50%,#C4A882 100%);display:flex;align-items:flex-end;padding:0 10% 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)}
+.hero-text{position:relative;z-index:1}
+.hero-eyebrow{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:16px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--white);line-height:1;letter-spacing:-0.01em}
+.hero h1 em{font-style:italic}
+.hero-diamond{position:absolute;right:10%;top:50%;transform:translateY(-50%);width:200px;height:200px;border:1px solid rgba(255,255,255,0.2);transform:translateY(-50%) rotate(45deg)}
+.hero-diamond-inner{position:absolute;inset:30px;border:1px solid rgba(255,255,255,0.1)}
+
+section{padding:90px 10%}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-label{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--warm-brown);margin-bottom:20px}
+.about-grid h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:400;line-height:1.15;color:var(--off-black);margin-bottom:28px}
+.about-grid h2 em{color:var(--deep-teal)}
+.about-grid p{font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:16px}
+.about-grid p strong{color:var(--off-black);font-weight:400}
+.divider-line{width:40px;height:1px;background:var(--warm-brown);margin-bottom:28px}
+.about-visual{background:var(--sand);height:500px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-visual-text{font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;color:var(--deep-teal);text-align:center;padding:40px;line-height:1.4}
+.about-visual::after{content:'';position:absolute;bottom:-40px;right:-40px;width:160px;height:160px;border:1px solid var(--warm-brown);opacity:0.4;transform:rotate(45deg)}
+
+.philosophy{background:var(--deep-teal);padding:90px 10%}
+.philosophy-inner{max-width:900px;margin:0 auto;text-align:center}
+.philosophy .label{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:32px}
+.philosophy blockquote{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;font-style:italic;color:var(--white);line-height:1.4;margin-bottom:32px}
+.philosophy cite{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm-brown)}
+
+.services-strip{background:var(--white);padding:70px 10%}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:50px}
+.service-card{background:var(--cream);padding:40px 32px;border-left:2px solid transparent;transition:border-color 0.3s}
+.service-card:hover{border-left-color:var(--warm-brown)}
+.service-icon{width:32px;height:32px;margin-bottom:20px;display:flex;align-items:center;justify-content:center}
+.service-diamond{width:18px;height:18px;background:var(--deep-teal);transform:rotate(45deg)}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--off-black);margin-bottom:12px}
+.service-card p{font-size:13px;color:var(--mid);line-height:1.7}
+.section-eyebrow{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--warm-brown);margin-bottom:14px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:400;color:var(--off-black);line-height:1.2}
+
+.team{padding:90px 10%;background:var(--cream)}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:56px}
+.team-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);overflow:hidden}
+.team-photo{background:var(--sand);min-height:300px;display:flex;align-items:center;justify-content:center;position:relative}
+.team-initials{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--deep-teal);opacity:0.4}
+.team-info{padding:36px 28px;display:flex;flex-direction:column;justify-content:center}
+.team-role{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm-brown);margin-bottom:8px}
+.team-info h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--off-black);margin-bottom:16px;line-height:1.2}
+.team-info p{font-size:13px;color:var(--mid);line-height:1.75}
+
+.reviews{background:var(--off-black);padding:90px 10%}
+.reviews .section-title{color:var(--white)}
+.reviews .section-eyebrow{color:var(--warm-brown)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);margin-top:56px}
+.review-card{background:var(--off-black);padding:40px 32px}
+.stars{display:flex;gap:4px;margin-bottom:24px}
+.star{width:12px;height:12px;background:var(--warm-brown);transform:rotate(45deg)}
+.review-text{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:24px}
+.review-author{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+
+.cta-section{background:var(--warm-brown);padding:80px 10%;text-align:center}
+.cta-section h2{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;font-style:italic;color:var(--white);margin-bottom:8px}
+.cta-section p{font-size:13px;letter-spacing:0.1em;color:rgba(255,255,255,0.7);margin-bottom:36px;text-transform:uppercase}
+.cta-btn{display:inline-block;background:var(--white);color:var(--off-black);padding:14px 44px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;font-weight:500;margin:0 8px}
+.cta-btn-outline{display:inline-block;border:1px solid rgba(255,255,255,0.6);color:var(--white);padding:14px 44px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;font-weight:300;margin:0 8px}
+
+footer{background:#0F1F1F;padding:60px 10% 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:50px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--white);margin-bottom:12px;letter-spacing:0.05em}
+.footer-tagline{font-size:12px;color:rgba(255,255,255,0.35);line-height:1.7;max-width:240px}
+.footer-heading{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--warm-brown);margin-bottom:20px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{text-decoration:none;color:rgba(255,255,255,0.45);font-size:13px}
+.footer-bottom{border-top:0.5px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.05em}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.animate{animation:fadeUp 0.7s ease forwards}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Diamond District Aesthetics<span>New York City</span></div>
+  <ul class="nav-links">
+    <li><a href="#" class="active">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Conditions</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Book Now</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-text animate">
+    <p class="hero-eyebrow">Midtown Manhattan · New York City</p>
+    <h1>About <em>Us</em></h1>
+  </div>
+  <div class="hero-diamond"></div>
+</div>
+
+<section>
+  <div class="about-grid">
+    <div>
+      <p class="about-label">Who We Are</p>
+      <div class="divider-line"></div>
+      <h2>Enhancing Beauty &amp; Confidence with <em>Aesthetic Excellence</em></h2>
+      <p>Located in the heart of New York City's Diamond District, our clinic is a trusted destination for advanced, non-surgical aesthetic treatments in NYC.</p>
+      <p>We specialize in delivering <strong>natural-looking, long-lasting enhancements</strong> with minimal downtime — always tailored to your skin, lifestyle, and personal beauty goals.</p>
+      <p>At Diamond District Aesthetics NYC, we believe aesthetics is about more than appearance. It's about confidence, self-expression, and feeling your best. Every treatment we offer is rooted in a patient-first philosophy, combining medical expertise, artistic precision, and the latest technology.</p>
+    </div>
+    <div class="about-visual">
+      <div class="about-visual-text">"The best aesthetic experience I've had — professional, welcoming, and results that speak for themselves."<br><br><small style="font-size:13px;letter-spacing:0.15em;text-transform:uppercase;font-style:normal;font-family:'Jost',sans-serif;color:var(--mid)">— Brenda G., New York</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="philosophy">
+  <div class="philosophy-inner">
+    <p class="label">Our Philosophy</p>
+    <blockquote>"Aesthetics is about more than appearance. It's about confidence, self-expression, and feeling comfortable in your own skin."</blockquote>
+    <cite>Diamond District Aesthetics NYC</cite>
+  </div>
+</div>
+
+<div class="services-strip">
+  <p class="section-eyebrow">What We Offer</p>
+  <h2 class="section-title">Crafted for Your<br>Natural Beauty</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><div class="service-diamond"></div></div>
+      <h3>Skin Rejuvenation</h3>
+      <p>Rediscover youthful, radiant skin with advanced treatments like Morpheus8 and dermal fillers that stimulate collagen and enhance natural contours.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><div class="service-diamond"></div></div>
+      <h3>Facial Aesthetics</h3>
+      <p>From subtle enhancements with Botox to volume restoration using Sculptra and Juvéderm — personalized treatments that celebrate your beauty.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><div class="service-diamond"></div></div>
+      <h3>Inner Glow</h3>
+      <p>Elevate your wellness with IV therapy that helps you feel energized, deeply hydrated, refreshed, and naturally beautiful from within.</p>
+    </div>
+  </div>
+</div>
+
+<section class="team">
+  <p class="section-eyebrow">Meet Our Team</p>
+  <h2 class="section-title">Dedicated to Your<br>Best Self</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-photo">
+        <span class="team-initials">OK</span>
+      </div>
+      <div class="team-info">
+        <p class="team-role">Aesthetic Practitioner, RN</p>
+        <h3>Olga Klempner</h3>
+        <p>A surgical eye and artistic touch, dedicated to restoring natural beauty with precision, compassion, and care.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <span class="team-initials">DC</span>
+      </div>
+      <div class="team-info">
+        <p class="team-role">Medical Director, MD</p>
+        <h3>Dr. Daniel Cibulsky</h3>
+        <p>An obstetrician-gynecologist in Stamford, CT, affiliated with multiple NY-area hospitals. 11–20 years of practice dedicated to natural-looking results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <p class="section-eyebrow">Patient Reviews</p>
+  <h2 class="section-title">Trusted Across<br>Midtown Manhattan</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+      <p class="review-text">"Olga is very skilled and knowledgeable. She walked me through everything, answered all my questions. The clinic is very spacious and welcoming — everyone makes you feel at home."</p>
+      <p class="review-author">— Denise A.</p>
+    </div>
+    <div class="review-card">
+      <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+      <p class="review-text">"So happy with my RF treatment! Could see the difference in 2 days. Getting compliments every day. Olga explained everything I needed to know — very attentive."</p>
+      <p class="review-author">— Irina T.</p>
+    </div>
+    <div class="review-card">
+      <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+      <p class="review-text">"Had my Emface and lip filler done with Olga Klempner. Couldn't be happier — my profile is more defined, my lips look naturally fuller. Highly recommend."</p>
+      <p class="review-author">— Dariosen M.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Begin Your Journey</h2>
+  <p>Advanced Non-Surgical Treatments · Midtown Manhattan, NYC</p>
+  <a href="#" class="cta-btn">Book a Consultation</a>
+  <a href="#" class="cta-btn-outline">Explore Services</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand">Diamond District Aesthetics</p>
+      <p class="footer-tagline">Enhance your natural beauty with expert care and advanced aesthetic treatments in Midtown Manhattan, NYC.</p>
+    </div>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-links">
+        <li><a href="#">Sculptra</a></li>
+        <li><a href="#">Emface</a></li>
+        <li><a href="#">Botox</a></li>
+        <li><a href="#">Radiesse</a></li>
+        <li><a href="#">PRP Treatment</a></li>
+        <li><a href="#">Microneedling</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">About</p>
+      <ul class="footer-links">
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Experts</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <ul class="footer-links">
+        <li><a href="#">15 W 47th St #502<br>New York, NY 10036</a></li>
+        <li><a href="#">+1 212-759-5595</a></li>
+        <li><a href="#">info@ddaestheticsnyc.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Diamond District Aesthetics NYC. All rights reserved.</p>
+    <p>Privacy Policy · Cookie Policy · Terms</p>
+  </div>
+</footer>
+
+</body>
+</html>
